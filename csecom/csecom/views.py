@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def main(request):
-    return HttpResponse("main 페이지입니다.")
+    return render(request, 'main.html')
