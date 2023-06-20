@@ -13,10 +13,7 @@ class UserManager(BaseUserManager):
         if not student_id:
             raise ValueError('학번을 정확히 입력해주세요.')
 
-        user = self.model(
-            student_id=student_id,
-            name=name,
-        )
+        user = self.model(student_id=student_id, name=name)
 
         user.set_password(password)
         user.save(using=self._db)
@@ -24,11 +21,7 @@ class UserManager(BaseUserManager):
         return user
     
     def create_superuser(self, student_id, name, password):
-        user = self.create_user(
-            student_id=student_id,
-            name=name,
-            password=password,
-        )
+        user = self.create_user(student_id=student_id, name=name, password=password,)
         user.is_admin = True
         user.save(using=self._db)
 

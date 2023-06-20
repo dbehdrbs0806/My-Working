@@ -18,6 +18,10 @@ class UserCreationForm(forms.ModelForm):
         qs = User.objects.filter(student_id=student_id)
         if qs.exists():
             raise forms.ValidationError('이미 존재하는 학번입니다.')
+        
+        elif len(student_id) != 8:
+            raise forms.ValidationError('학번은 8자리로 입력해주세요.')
+
         return student_id
 
     def clean_password2(self):
