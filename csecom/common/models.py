@@ -33,6 +33,7 @@ class User(AbstractBaseUser):
     password = models.CharField(verbose_name='비밀번호', max_length=128)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
+    is_check = models.BooleanField(default=False)
 
     objects = UserManager()
 
@@ -52,3 +53,6 @@ class User(AbstractBaseUser):
     def is_staff(self):
         return self.is_admin
     
+    @property
+    def is_check(self):
+        return self.is_admincheck

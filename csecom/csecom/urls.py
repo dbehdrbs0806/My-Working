@@ -8,4 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', views.main, name='main'),
     path('locker/', include('locker.urls')),
+    path('common/', include('common.urls')),
 ]
