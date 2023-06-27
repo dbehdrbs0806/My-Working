@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views #이 부분은 현 디렉토리에 viewpy파일을 import하게 한다 의미
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('welcome/', views.index, name='welcome'),
+    path('question/', views. name='')    
 ]
