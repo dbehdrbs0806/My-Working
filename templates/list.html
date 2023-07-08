@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Question and Answer</title>
+    <style type="text/css"> body{width:900px}</style>
+</head>
+<body>
+    <h2>큐앤애이</h2> 
+    <ul>
+        <li>제목 | 저자 | 이메일</li>
+    {% for article in articleList %}
+    <li>{{ article.title }} | {{ article.name }} | {{ article.email}}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

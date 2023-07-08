@@ -21,5 +21,6 @@ from . import views #이 부분은 현 디렉토리에 viewpy파일을 import하
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('welcome/', views.index, name='welcome'),
-    path('question/', views. name='')    
+    path('write/', views.write, name ='write'),
+    path('list/', views.list, name='list'),  
 ]
