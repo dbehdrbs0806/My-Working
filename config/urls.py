@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views #이 부분은 현 디렉토리에 viewpy파일을 import하게 한다 의미
 
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,3 +28,5 @@ urlpatterns = [
 ]
 """include를 사용하면 welcome의 서브 url인 welcome/hi, welcome/bye같은
     welcome/시작 url 추가 시 urls.py파일 전체를 수정할 필요가 없다"""
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

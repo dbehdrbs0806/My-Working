@@ -6,6 +6,8 @@ class QuestionAdmin(admin.ModelAdmin):
 
 admin.site.register(Question, QuestionAdmin)
 
+
+
 """admin페이지에서 확인할 수 있는 부분
 파라미터부분은 admin.ModelAdmin이 가독성이 좋으며
 search_fields속성에 subject를 추가한다
