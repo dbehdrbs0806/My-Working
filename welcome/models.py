@@ -4,7 +4,7 @@ class Question(models.Model):
     subject = models.CharField(max_length=200)
     content = models.TextField()
     create_date = models.DateTimeField()
-    image = models.ImageField(upload_to='imges/', blank=True, null=True)
+    image = models.ImageField(upload_to='image/', blank=True, null=True)
 
     def __str__(self):
         return self.subject
