@@ -3,14 +3,20 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from django.utils import timezone
 from .forms import *
+from django.core.paginator import Paginator  
+
 
 def fprint(request):
     return HttpResponse("안녕하세요 django에 오신것을 환영합니다.")
+
 #HttpResponse함수는 화면에 텍스트, html을 출력하는 함수
 
 def index(request):
+    page = request.GET.get('page,' '1') #GET방식으로 /page=1 형식으로 page값을 가져온다
     question_list = Question.objects.order_by('-create_date')
-    context = {'question_list':question_list}
+    paginator = Paginator(question_list, 10) # 페이지당 10개씩 question_list변수를 보여주기
+    page_obj = paginator.get_page(page) # get_page(페이지번호)를 통해 페이지에 보여질 객체를 queryset형태로 반환
+    context = {'question_list':page_obj} # page_obj의 내용을 question_list객체로 받음
     return render(request, 'question_list.html', context)
 
 def detail(request, question_id):

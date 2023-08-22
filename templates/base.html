@@ -9,10 +9,15 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <!-- pybo CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>Hello, pybo!</title>
+    <title>나만의 웹사이트 만들기!</title>
 </head>
 <body>
+    <!-- 네비게이션바 -->
+{% include "navbar.html" %}
 <!-- 기본 템플릿 안에 삽입될 내용 Start -->
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+<!-- 네비게이션바 -->
 {% block content %}
 {% endblock %}
 <!-- 기본 템플릿 안에 삽입될 내용 End -->
